@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        String [] words = new String[10]{"One", "Two","Three","Four","Five","Siz","Seven","Eight","Nine","Ten"};
-
 
         super.onCreate(savedInstanceState);
         // Set the content of the activity to use the activity_main.xml layout file
