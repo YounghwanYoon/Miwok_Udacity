@@ -23,19 +23,45 @@ public class NumbersActivity extends AppCompatActivity {
         ArrayList<String> words = new ArrayList<String>();
        //Create an array of numbers in English
         String[] wordsEnglish =
-                new String[]{"One", "Two","Three","Four","Five","Siz","Seven","Eight","Nine","Ten"};
-        int k = 0;
-        while(k < wordsEnglish.length )
+                new String[]{"One", "Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten"};
+        int index = 0;
+        while(index < wordsEnglish.length )
         {
-            words.add(wordsEnglish[k]);
-            k++;
+            words.add(wordsEnglish[index]);
+            index++;
+        }
+        //Create Parent LinearLayout View
+        LinearLayout numberLinearLayout_View = (LinearLayout)findViewById(R.id.rootView);
+
+        //Create ArrayList of TextViews and setText for each TextViews before add to parentView.
+        ArrayList<TextView> numberTextViewList = new ArrayList<TextView>();
+        index = 0;
+        while(index < words.size()){
+            numberTextViewList.add(new TextView(this));
+            numberTextViewList.get(index).setText(words.get(index));
+            numberLinearLayout_View.addView(numberTextViewList.get(index));
+            index++;
         }
 
+        //Create Parent LinearLayout View
+        LinearLayout parentView_Miwok= (LinearLayout)findViewById(R.id.miwokView);
         //Create an array of numbers in Miwok
         String[] wordsMiwok =
                 new String[]{"lutti", "ottiko", "tolookosu", "oyyisa", "massoka", "temmokka", "kenekaku", "kawinta", "wo'e", "na'aacha"};
-        //Create Parent LinearLayout View
-        LinearLayout numberLinearLayout_View = (LinearLayout)findViewById(R.id.rootView);
+        ArrayList<TextView> miwokNumberTextViewList = new ArrayList<TextView>();
+
+        for(index = 0; index <wordsMiwok.length; index++){
+            miwokNumberTextViewList.add(new TextView(this));
+            miwokNumberTextViewList.get(index).setText(wordsMiwok[index]);
+            parentView_Miwok.addView(miwokNumberTextViewList.get(index));
+            Log.v("NumbersActivity.java", "TextView setText value of index" + wordsMiwok[index]);
+        }
+
+
+        /*//Create an array of numbers in Miwok
+        String[] wordsMiwok =
+                new String[]{"lutti", "ottiko", "tolookosu", "oyyisa", "massoka", "temmokka", "kenekaku", "kawinta", "wo'e", "na'aacha"};
+
         TextView numberTextView = new TextView(this);
         numberTextView.setText(words.get(0));
 
@@ -44,15 +70,9 @@ public class NumbersActivity extends AppCompatActivity {
         //Add TextView as a child view to parents view, numberLinearLayout
         numberLinearLayout_View.addView(numberTextViewTwo);
 
+*/
 
-        ArrayList<TextView> numberTextViewList = new ArrayList<TextView>();
-        int i = 0;
-        while(i < 9){
-            numberTextViewList.add(new TextView(this).setText(words.get(i)););
 
-            numberLinearLayout_View.addView(numberTextViewList.get(i));
-            i++
-        }
 
 
 
