@@ -28,7 +28,7 @@ public class NumbersActivity extends AppCompatActivity {
 
        //Create an array of numbers in English and Miwok
         String[] wordsEnglish =
-                new String[]{"One", "Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten", "Eleven","Twelve", "Thirteen", "Fourteen", "Fifteen"};
+                new String[]{"One", "Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten"};
         String[] wordsMiwok =
                 new String[]{"lutti", "ottiko", "tolookosu", "oyyisa", "massoka", "temmokka", "kenekaku", "kawinta", "wo'e", "na'aacha"};
 
@@ -39,7 +39,8 @@ public class NumbersActivity extends AppCompatActivity {
             index++;
         }
 
-        ArrayAdapter<Word> itemsAdapter = new ArrayAdapter<Word>(this, R.layout.list_item, words);
+        WordAdapter itemsAdapter = new WordAdapter (this, words);
+        Log.v("NumbersActivity", "Completed making itemsAdapter ");
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
 
