@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -23,8 +24,8 @@ public class WordAdapter extends ArrayAdapter<Word> {
         super(context, 0, object );
     }
 
-
-    public View getView(int position, ListView convertView, ViewGroup parent){
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent){
         View listItemView = convertView;
 
         //CHeck if the existing view is being reused, otherwise inflate the view
@@ -34,11 +35,16 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // Get the object located at this position (Current Position) in the list
         Word currentWord = getItem(position);
 
+        // Assign textView with current position miwok word.
         TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
         miwokTextView.setText(currentWord.getMiwokTranslation());
 
+        // Assign textView with current position default(English) word.
         TextView englishTextView = (TextView) listItemView.findViewById(R.id.default_text_view);
         englishTextView.setText((currentWord.getDefaultTranslation()));
+
+        ImageView imageView = (ImageView) listItemView.findViewById(R.id.image_Icon);
+        imageView.setImageResource(currentWord.getImageSourceID());
 
         return listItemView;
     }
