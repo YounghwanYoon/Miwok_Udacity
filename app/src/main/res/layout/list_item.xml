@@ -9,7 +9,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:src="@mipmap/ic_launcher"
         android:id="@+id/image_Icon"/>
 
     <LinearLayout
@@ -24,7 +23,6 @@
             android:id="@+id/miwok_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             tools:text="lutti">
         </TextView>
 
@@ -32,7 +30,6 @@
             android:id="@+id/default_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             tools:text="one">
         </TextView>
     </LinearLayout>

@@ -9,8 +9,8 @@ public class Word {
 
     private String mMiwokWord;
     private String mDefaultWord;
-    private int mImageSourceID;
-
+    private int  mImageSourceID;
+    private final static int noImageID=-1;
 
     /**
      *  Constructor takes both String variable of Miwok and Default language
@@ -20,6 +20,7 @@ public class Word {
     public Word(String miwokWord, String defaultWord){
         mMiwokWord = miwokWord;
         mDefaultWord = defaultWord;
+        mImageSourceID = -1;
     }
     /**
      *  Constructor takes both String variable of Miwok and Default language
@@ -32,7 +33,6 @@ public class Word {
         mDefaultWord = defaultWord;
         mImageSourceID = imageSourceID;
     }
-
 
     public void setMiwokWord(String miwokWord){
         mMiwokWord = miwokWord;
@@ -53,4 +53,8 @@ public class Word {
     }
 
     public int getImageSourceID(){return mImageSourceID;};
+
+    public boolean hasImage(){
+        return mImageSourceID != noImageID;
+    }
 }
