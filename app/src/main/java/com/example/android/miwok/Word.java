@@ -11,6 +11,7 @@ public class Word {
     private String mDefaultWord;
     private int  mImageSourceID;
     private final static int noImageID=-1;
+    private int mdesiredBackGroundColor;
 
     /**
      *  Constructor takes both String variable of Miwok and Default language
@@ -33,6 +34,8 @@ public class Word {
         mDefaultWord = defaultWord;
         mImageSourceID = imageSourceID;
     }
+
+    public void setDesiredBackGroundColor(int desiredColor){mdesiredBackGroundColor = desiredColor;};
 
     public void setMiwokWord(String miwokWord){
         mMiwokWord = miwokWord;

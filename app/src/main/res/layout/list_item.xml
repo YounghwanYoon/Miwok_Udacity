@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/list_item"
+        android:background="@color/category_colors"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp">
 

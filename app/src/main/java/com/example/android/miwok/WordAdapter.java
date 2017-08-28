@@ -1,11 +1,13 @@
 package com.example.android.miwok;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -34,6 +36,9 @@ public class WordAdapter extends ArrayAdapter<Word> {
         }
         // Get the object located at this position (Current Position) in the list
         Word currentWord = getItem(position);
+
+        LinearLayout currentLinearLayout = (LinearLayout) listItemView.findViewById(R.id.list_item);
+        currentLinearLayout.setBackgroundResource(R.color.category_numbers);
 
         // Assign textView with current position miwok word.
         TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
