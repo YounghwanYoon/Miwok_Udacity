@@ -30,4 +30,8 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
+    <style name="NumberCategoryStyle">
+        <item name = "android:layout_width">wrap_content</item>
+        <item name = "android:layout_height">@dimen/list_item_height</item>
+    </style>
 </resources>

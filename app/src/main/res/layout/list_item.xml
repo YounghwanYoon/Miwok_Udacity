@@ -6,21 +6,21 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:id="@+id/image_Icon"/>
+        android:style="ImageStyle"
+        android:layout_width="@dimen/image_view_height"
+        android:layout_height="@dimen/image_view_width"
+        android:id="@+id/image_Icon"
+        android:src="@mipmap/ic_launcher"/>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/list_item_height"
         android:id="@+id/list_item"
-        android:background="@color/category_colors"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp">
+        android:background="@color/category_numbers">
 
         <TextView
+            android:style="@style/CategoryStyle"
             android:id="@+id/miwok_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,6 +28,7 @@
         </TextView>
 
         <TextView
+            android:style="@style/CategoryStyle"
             android:id="@+id/default_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
