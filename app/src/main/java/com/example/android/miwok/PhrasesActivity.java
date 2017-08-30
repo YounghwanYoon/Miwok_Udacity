@@ -21,15 +21,17 @@ public class PhrasesActivity extends AppCompatActivity {
                 new String[]{"Where are you going?", "What is your name?","My name is...","How are you feeling?","I'm feeling good.","Are you coming?","Yes,I'm coming","I'm coming","Let's go.","Come here."};
         String[] wordsMiwok =
                 new String[]{"minto wuksus", "tinnә oyaase'nә", "oyaaset...", "michәksәs?", "kuchi achit", "әәnәs'aa?", "hәә’ әәnәm", "әәnәm", "yoowutis", "әnni'nem"};
+
+       //Set a Background Color
         int textViewBackGroundColor = R.color.category_phrases;
 
         int index = 0;
         while(index < wordsEnglish.length) {
-            words.add(new Word(wordsEnglish[index], wordsMiwok[index], textViewBackGroundColor));
+            words.add(new Word(wordsEnglish[index], wordsMiwok[index]));
             index++;
         }
 
-        WordAdapter itemsAdapter = new WordAdapter (this, words);
+        WordAdapter itemsAdapter = new WordAdapter (this, words,textViewBackGroundColor);
 
         // Get a reference to the ListView, and attach the adapter to the listVew
         ListView listView = (ListView) findViewById(R.id.list);

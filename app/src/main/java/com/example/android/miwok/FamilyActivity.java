@@ -24,14 +24,15 @@ public class FamilyActivity extends AppCompatActivity {
         int[] imageSourceID =
                 new int[]{R.drawable.family_father, R.drawable.family_mother, R.drawable.family_son, R.drawable.family_daughter, R.drawable.family_older_brother, R.drawable.family_younger_brother, R.drawable.family_older_sister, R.drawable.family_younger_sister
                         ,R.drawable.family_grandmother, R.drawable.family_grandfather};
+        //Set a BackGroundColor for the TextView Layout
         int textViewBackGroundColor = R.color.category_family;
         int index = 0;
         while(index < wordsEnglish.length)
         {
-            words.add(new Word(wordsEnglish[index], wordsMiwok[index], imageSourceID[index], textViewBackGroundColor));
+            words.add(new Word(wordsEnglish[index], wordsMiwok[index], imageSourceID[index]));
             index++;
         }
-        WordAdapter itemsAdapter = new WordAdapter (this, words);
+        WordAdapter itemsAdapter = new WordAdapter (this, words, textViewBackGroundColor);
 
         // Get a reference to the ListView, and attach the adapter to the listVew
         ListView listView = (ListView) findViewById(R.id.list);

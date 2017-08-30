@@ -34,11 +34,11 @@ public class NumbersActivity extends AppCompatActivity {
         int index = 0;
         while(index < wordsEnglish.length)
         {
-            words.add(new Word(wordsEnglish[index], wordsMiwok[index], imageSourceID[index], backGroundColor));
+            words.add(new Word(wordsEnglish[index], wordsMiwok[index], imageSourceID[index]));
             index++;
         }
 
-        WordAdapter itemsAdapter = new WordAdapter (this, words);
+        WordAdapter itemsAdapter = new WordAdapter (this, words,backGroundColor);
 
         // Get a reference to the ListView, and attach the adapter to the listVew
         ListView listView = (ListView) findViewById(R.id.list);

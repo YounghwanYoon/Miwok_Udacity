@@ -20,10 +20,12 @@ import java.util.List;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
+private int mBackGroundColor;
 
-    WordAdapter(Context context, ArrayList<Word> object)
+    WordAdapter(Context context, ArrayList<Word> object, int backGroundColor)
     {
-        super(context, 0, object );
+        super(context, 0, object);
+        mBackGroundColor = backGroundColor;
     }
 
     @Override
@@ -38,7 +40,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         Word currentWord = getItem(position);
 
         LinearLayout currentLinearLayout = (LinearLayout) listItemView.findViewById(R.id.list_item);
-        currentLinearLayout.setBackgroundResource(currentWord.getTextViewBackGroundColor());
+        currentLinearLayout.setBackgroundResource(mBackGroundColor);
 
         // Assign textView with current position miwok word.
         TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
