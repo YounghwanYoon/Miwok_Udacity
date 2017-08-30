@@ -24,11 +24,11 @@ public class FamilyActivity extends AppCompatActivity {
         int[] imageSourceID =
                 new int[]{R.drawable.family_father, R.drawable.family_mother, R.drawable.family_son, R.drawable.family_daughter, R.drawable.family_older_brother, R.drawable.family_younger_brother, R.drawable.family_older_sister, R.drawable.family_younger_sister
                         ,R.drawable.family_grandmother, R.drawable.family_grandfather};
-
+        int textViewBackGroundColor = R.color.category_family;
         int index = 0;
         while(index < wordsEnglish.length)
         {
-            words.add(new Word(wordsEnglish[index], wordsMiwok[index], imageSourceID[index]));
+            words.add(new Word(wordsEnglish[index], wordsMiwok[index], imageSourceID[index], textViewBackGroundColor));
             index++;
         }
         WordAdapter itemsAdapter = new WordAdapter (this, words);

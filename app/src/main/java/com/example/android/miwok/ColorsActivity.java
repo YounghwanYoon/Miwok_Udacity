@@ -22,11 +22,11 @@ public class ColorsActivity extends AppCompatActivity {
                 new String[]{"weṭeṭṭi", "chokokki", "ṭakaakki", "ṭopoppi", "kululli", "kelelli", "ṭopiisә", "chiwiiṭә"};
         int[] imageSourceID =
                 new int[]{R.drawable.color_red, R.drawable.color_green, R.drawable.color_brown, R.drawable.color_gray, R.drawable.color_black, R.drawable.color_white, R.drawable.color_dusty_yellow, R.drawable.color_mustard_yellow};
-
+        int textViewBackGroundColor = R.color.category_colors;
         int index = 0;
         while(index < wordsEnglish.length)
         {
-            words.add(new Word(wordsEnglish[index], wordsMiwok[index], imageSourceID[index]));
+            words.add(new Word(wordsEnglish[index], wordsMiwok[index], imageSourceID[index], textViewBackGroundColor));
             index++;
         }
         WordAdapter itemsAdapter = new WordAdapter (this, words);

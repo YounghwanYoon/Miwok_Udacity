@@ -38,7 +38,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         Word currentWord = getItem(position);
 
         LinearLayout currentLinearLayout = (LinearLayout) listItemView.findViewById(R.id.list_item);
-        currentLinearLayout.setBackgroundResource(R.color.category_numbers);
+        currentLinearLayout.setBackgroundResource(currentWord.getTextViewBackGroundColor());
 
         // Assign textView with current position miwok word.
         TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);

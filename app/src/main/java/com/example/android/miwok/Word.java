@@ -11,17 +11,18 @@ public class Word {
     private String mDefaultWord;
     private int  mImageSourceID;
     private final static int noImageID=-1;
-    private int mdesiredBackGroundColor;
+    private int mTextViewBackGroundColor;
 
     /**
      *  Constructor takes both String variable of Miwok and Default language
      * @param miwokWord is the word in a language of Miwok
      * @param defaultWord is the word in a user's default language such as English
      */
-    public Word(String miwokWord, String defaultWord){
+    public Word(String miwokWord, String defaultWord, int textViewBackGroundColor){
         mMiwokWord = miwokWord;
         mDefaultWord = defaultWord;
         mImageSourceID = -1;
+        mTextViewBackGroundColor = textViewBackGroundColor;
     }
     /**
      *  Constructor takes both String variable of Miwok and Default language
@@ -29,13 +30,14 @@ public class Word {
      * @param defaultWord is the word in a user's default language such as English
      *@param imageSourceID is the drawable resource ID for hte image
      */
-    public Word(String miwokWord, String defaultWord, int imageSourceID){
+    public Word(String miwokWord, String defaultWord, int imageSourceID, int textViewBackGroundColor){
         mMiwokWord = miwokWord;
         mDefaultWord = defaultWord;
         mImageSourceID = imageSourceID;
+        mTextViewBackGroundColor = textViewBackGroundColor;
     }
 
-    public void setDesiredBackGroundColor(int desiredColor){mdesiredBackGroundColor = desiredColor;};
+    public void setTextViewBackGroundColor(int desiredColor){mTextViewBackGroundColor = desiredColor;};
 
     public void setMiwokWord(String miwokWord){
         mMiwokWord = miwokWord;
@@ -56,6 +58,8 @@ public class Word {
     }
 
     public int getImageSourceID(){return mImageSourceID;};
+
+    public int getTextViewBackGroundColor(){return mTextViewBackGroundColor;};
 
     public boolean hasImage(){
         return mImageSourceID != noImageID;
