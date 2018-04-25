@@ -96,30 +96,3 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-/* One way to make a clickable : Create new Class (NumbersClickListener.java)
-
-        //Find the View that shows the numbers category
-        TextView numberView = (TextView) findViewById(R.id.numbers);
-
-        //Set a clickListener on that view
-        numberView.setOnClickListener( new NumbersClickListener());
-
- */
-    /* Third way to make a clickable: Create local method
-    /**
-     * Once Number column is clicked, then NumbersActivity.class/ its screen will be opened.
-     * @param view
-     /
-    public void openNumbersList(View view){
-        //TODO: Write your code here!
-        Intent numberIntent = new Intent(this, NumbersActivity.class);
-        startActivity(numberIntent);
-    }
-    private View.OnClickListener numberListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            // do something when the button is clicked
-            openFamilyList(v);
-        }
-    };
-*/

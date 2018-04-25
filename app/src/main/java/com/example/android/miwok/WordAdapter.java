@@ -2,15 +2,19 @@ package com.example.android.miwok;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,11 +25,13 @@ import java.util.List;
 public class WordAdapter extends ArrayAdapter<Word> {
 
 private int mBackGroundColor;
+private MediaPlayer mediaPlayer;
 
     WordAdapter(Context context, ArrayList<Word> object, int backGroundColor)
     {
         super(context, 0, object);
         mBackGroundColor = backGroundColor;
+        mediaPlayer = null;
     }
 
     @Override
@@ -37,7 +43,7 @@ private int mBackGroundColor;
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
         // Get the object located at this position (Current Position) in the list
-        Word currentWord = getItem(position);
+        final Word currentWord = getItem(position);
 
         LinearLayout currentLinearLayout = (LinearLayout) listItemView.findViewById(R.id.list_item);
         currentLinearLayout.setBackgroundResource(mBackGroundColor);
