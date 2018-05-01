@@ -18,6 +18,7 @@ package com.example.android.miwok;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+        Log.v("MainActivity.java", "I'm onCreate State");
 
 
 // Second way to make a clickable: Local Method within TextView's setOnclickListener Method
@@ -94,5 +96,31 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.v("MainActivity.java", "I'm on Pause State");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.v("FamilyActivity.java", "I'm on Resume State");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.v("FamilyActivity.java", "I'm on onStop State");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.v("FamilyActivity.java", "I'm on DestroyState");
+    }
+
 }
 
