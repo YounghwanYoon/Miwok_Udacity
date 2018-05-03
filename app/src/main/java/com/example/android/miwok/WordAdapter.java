@@ -4,13 +4,14 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -44,9 +45,10 @@ private MediaPlayer mediaPlayer;
         }
         // Get the object located at this position (Current Position) in the list
         final Word currentWord = getItem(position);
+        Log.e("WordAdapter","I am inside WordAdapter class under View method");
 
-        LinearLayout currentLinearLayout = (LinearLayout) listItemView.findViewById(R.id.list_item);
-        currentLinearLayout.setBackgroundResource(mBackGroundColor);
+        RelativeLayout currentRelativeLayout = (RelativeLayout) listItemView.findViewById(R.id.list_item);
+        currentRelativeLayout.setBackgroundResource(mBackGroundColor);
 
         // Assign textView with current position miwok word.
         TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
@@ -57,7 +59,7 @@ private MediaPlayer mediaPlayer;
         englishTextView.setText((currentWord.getDefaultTranslation()));
 
         // Find the ImageView in the list_item.xml layout with the ID image.
-        ImageView imageView = (ImageView) listItemView.findViewById(R.id.image_Icon);
+        ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
         if (currentWord.hasImage())
         {
             //Set Image with correct image source
