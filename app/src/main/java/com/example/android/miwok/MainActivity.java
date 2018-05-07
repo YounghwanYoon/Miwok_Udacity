@@ -96,31 +96,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.v("MainActivity.java", "I'm on Pause State");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.v("FamilyActivity.java", "I'm on Resume State");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.v("FamilyActivity.java", "I'm on onStop State");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.v("FamilyActivity.java", "I'm on DestroyState");
-    }
-
 }
 
