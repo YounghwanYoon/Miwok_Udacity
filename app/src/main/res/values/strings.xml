@@ -28,6 +28,10 @@
     <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
     <string name="category_family">Family Members</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Page Titles -->
+    <string name="title_number">Numbers</string>
+    <string name ="title_family">Families</string>
+    <string name="title_color">Colors</string>
+    <string name="title_phrases">Phrases</string>
+
 </resources>

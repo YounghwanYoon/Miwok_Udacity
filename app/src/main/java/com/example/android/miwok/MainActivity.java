@@ -15,8 +15,10 @@
  */
 package com.example.android.miwok;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -33,6 +35,7 @@ public class MainActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final ActionBar actionBar = getActionBar();
 
         super.onCreate(savedInstanceState);
         // Set the content of the activity to use the activity_main.xml layout file
@@ -42,6 +45,10 @@ public class MainActivity extends FragmentActivity {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         viewPager.setAdapter(viewPagerAdapter);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        tabLayout.setupWithViewPager(viewPager);
+
 
 /*  Back up for selection category layout
 
